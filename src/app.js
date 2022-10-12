@@ -14,5 +14,4 @@ app.use(
 app.use(express.json());
 app.use(articlesRoutes);
 
-
 app.listen(port, () => console.log(`Running in http://localhost/${port}`));

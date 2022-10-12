@@ -4,8 +4,9 @@ import ArticleController from '../controllers/ArticleController';
 const router = new Router()
 
 router.get('/', ArticleController.index);
-router.get('/articles', ArticleController.show);
-router.get('/articles/:id', ArticleController.showOne);
-router.post('/store', ArticleController.store);
+router.get('/articles', ArticleController.getAllArticles);
+router.get('/articles/:id', ArticleController.getOneArticle);
+router.post('/store', ArticleController.createArticle);
+router.put('/articles/:id', ArticleController.updateArticle);
 
 export default router;
