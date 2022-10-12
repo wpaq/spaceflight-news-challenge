@@ -76,6 +76,22 @@ class ArticleController {
       "message": "Successfully Updated"
     })
   }
+  
+  async deleteArticle (req, res) {
+    const id = req.params.id
+    
+    if (!id) {
+      return res.status(400).json({
+        "message": "Provide ID"
+      })
+    }
+    
+    await Articles.findByIdAndDelete({ _id: id })
+
+    return res.status(200).json({
+      "message": "Successfully Deleted"
+    })
+  }
 }
 
 export default new ArticleController();
